@@ -7,6 +7,7 @@ All created games
 |:----: |:----:|:-----:|
 | ID | UUID | Primary Key (universal) |
 | game_id | UUID | |
+| name | TEXT||
 
 
 ## players

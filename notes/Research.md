@@ -1,5 +1,5 @@
 # Purpose
-Code, ideas, and links as a way to take notes for future reference, as well as showing my thought process/progress throughout this project. A lot of the basic commands and tools I have already used previously but need to review and brush up on.
+Code, ideas, and links as a way to take notes for future reference, as well as showing progressive learning throughout this project. A lot of the basic commands and tools I have already used previously but need to review and brush up on.
 
 # Set Up
 
@@ -26,3 +26,12 @@ Schema Design
 
 UUID
 https://medium.com/@tmadhusanka333/uuids-in-sql-server-the-simple-guide-to-unique-identifiers-a67499b98f2e
+
+# React Review
+Components
+https://www.w3schools.com/react/react_components.asp
+
+React Forms (Input handling)
+https://www.w3schools.com/react/react_forms_multiple_inputs.asp
+https://www.w3schools.com/react/react_forms_submit.asp
+
