@@ -35,3 +35,18 @@ React Forms (Input handling)
 https://www.w3schools.com/react/react_forms_multiple_inputs.asp
 https://www.w3schools.com/react/react_forms_submit.asp
 
+Remove Property from State Object in React
+https://stackoverflow.com/questions/68731583/how-can-i-remove-a-property-from-state-object-in-react
+
+# Functions Review
+map()
+https://www.w3schools.com/react/react_es6_array_map.asp
+
+crypto.randomUUID()
+- for generating random ID's
+https://coreui.io/answers/how-to-generate-uuid-in-javascript/
+
+Object.entries()
+- to map over an object, first need to make it iterable
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
