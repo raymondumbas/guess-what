@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import DynamicListField from './DynamicListField';
 
 // Form Code based on w3schools guide
 function NewGameModal(){
@@ -17,14 +18,16 @@ function NewGameModal(){
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>First name:
+
+      <label>Game Name:
       <input 
         type="text" 
-        name="firstname" 
-        value={inputs.firstname} 
+        name="name" 
+        value={inputs.name} 
         onChange={handleChange}
       />
       </label>
+
       <label>Last name:
         <input 
           type="text" 
@@ -34,6 +37,8 @@ function NewGameModal(){
         />
       </label>
       <p>Current values: {inputs.firstname} {inputs.lastname}</p>
+      
+      <DynamicListField setInputs = {setInputs} />
 
       <input type="submit" />
     </form>
