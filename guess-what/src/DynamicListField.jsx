@@ -65,7 +65,7 @@ function DynamicListField(props){
                         type="button" 
                         onClick={() => deleteOption(id)}
                     >
-                        remove
+                        X
                     </button>
                 </>
             ))}

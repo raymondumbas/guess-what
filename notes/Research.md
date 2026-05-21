@@ -27,6 +27,10 @@ Schema Design
 UUID
 https://medium.com/@tmadhusanka333/uuids-in-sql-server-the-simple-guide-to-unique-identifiers-a67499b98f2e
 
+## Supabase
+Getting Started
+https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
+
 # React Review
 Components
 https://www.w3schools.com/react/react_components.asp

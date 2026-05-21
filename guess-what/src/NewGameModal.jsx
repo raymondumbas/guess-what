@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import DynamicListField from './DynamicListField';
+import supabase from './config/supabase-config';
 
 // Form Code based on w3schools guide
 function NewGameModal(){
@@ -11,9 +12,21 @@ function NewGameModal(){
         setInputs(values => ({...values, [name]: value}))
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        alert(Object.entries(inputs));
+
+        console.log("HERE")
+        const { data, error } = await supabase.from('games').insert([
+          {
+            ID: crypto.randomUUID(),
+            game_id: crypto.randomUUID(),
+            name: inputs.name
+          }
+          
+        ])
+
+        console.log("data", data)
+        console.log("error", error)
     }
 
   return (
@@ -28,19 +41,9 @@ function NewGameModal(){
       />
       </label>
 
-      <label>Last name:
-        <input 
-          type="text" 
-          name="lastname" 
-          value={inputs.lastname} 
-          onChange={handleChange}
-        />
-      </label>
-      <p>Current values: {inputs.firstname} {inputs.lastname}</p>
-      
       <DynamicListField setInputs = {setInputs} />
 
-      <input type="submit" />
+      <input type="submit" value="create"/>
     </form>
   )
 }
