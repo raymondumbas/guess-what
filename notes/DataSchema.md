@@ -8,6 +8,7 @@ All created games
 | ID | UUID | Primary Key (universal) |
 | game_id | UUID | |
 | name | TEXT||
+| options| JSONB ||
 
 
 ## players
@@ -35,3 +36,4 @@ All created games
 | game_id | UUID | |
 | user_id | UUID | |
 | round_num| UUID | |
+| prediction| | |
