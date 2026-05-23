@@ -11,11 +11,12 @@ All created games
 | options| JSONB ||
 
 
-## players
+## player_records
 | Column Name | Value | Notes|
 |:----: |:----:|:-----:|
 | ID | UUID | Primary Key (universal) |
 | user_id | UUID| |
+| name | TEXT| |
 | game_id | UUID| |
 | score | INT | Number of correct guesses|
 
@@ -26,7 +27,7 @@ All created games
 | ID | UUID | Primary Key (universal) |
 | game_id | UUID | |
 | round_num | UUID||
-| option | TEXT ||
+| correct_option | TEXT ||
 
 
 ## predictions
@@ -36,4 +37,4 @@ All created games
 | game_id | UUID | |
 | user_id | UUID | |
 | round_num| UUID | |
-| prediction| | |
+| pred_option_| TEXT| |

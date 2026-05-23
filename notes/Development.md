@@ -18,6 +18,7 @@ User Input Backend > Connect to DB > Connect to front end button > Style
 - Connect to database
     - Instead of printing results, write to database
 
-# User Input Backend
-New Game Modal
+# Data Flow
+User Creates Account
+- Add entry in  
 
