@@ -15,7 +15,6 @@ function NewGameModal(){
     async function handleSubmit(e) {
         e.preventDefault();
 
-        console.log("HERE")
         const { data, error } = await supabase.from('games').insert([
           {
             ID: crypto.randomUUID(),
