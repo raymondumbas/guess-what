@@ -13,16 +13,19 @@ const AuthProvider = ({ children }) => {
             setUser(data.user);
         });
 
+            // Listen for login/logout
+      const {
+          data: { subscription }
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+
+      setUser(session?.user ?? null);
+
+      });
+
+      
     }, []);
 
-    // Listen for login/logout
-    const {
-        data: { subscription }
-    } = supabase.auth.onAuthStateChange((_event, session) => {
 
-    setUser(session?.user ?? null);
-
-    });
 
   return (
     <AuthContext.Provider value={{ user }}>
