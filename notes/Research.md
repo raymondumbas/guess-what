@@ -31,7 +31,10 @@ https://medium.com/@tmadhusanka333/uuids-in-sql-server-the-simple-guide-to-uniqu
 Getting Started
 https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
 
-# React Review
+AuthContext in React with Supabase
+https://medium.com/@0xJad/manage-authentication-state-in-react-with-authcontext-2d3129eac92b
+
+# React
 Components
 https://www.w3schools.com/react/react_components.asp
 
@@ -41,6 +44,9 @@ https://www.w3schools.com/react/react_forms_submit.asp
 
 Remove Property from State Object in React
 https://stackoverflow.com/questions/68731583/how-can-i-remove-a-property-from-state-object-in-react
+
+Router to manage multi-view
+https://www.w3schools.com/react/react_router.asp
 
 # Functions Review
 map()
