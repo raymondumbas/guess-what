@@ -1,24 +1,35 @@
 import { useState, useEffect } from 'react';
-
+import { useParams } from "react-router-dom";
 import supabase from './config/supabase-config';
-
+import { useNavigate } from "react-router-dom";
 
 function GamePage(props){
-   const [game, setGame] = useState(null);
+    const {gameName} = useParams();
+    const [game, setGame] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     async function getGameInfo(){
 
         const { data, error } = await supabase
                 .from("games")
                 .select("game_id, options")
-                .eq("name", props.gameName)
+                .eq("name", gameName)
                 .single();
 
-                if(!error){
+                if(error){
 
-                   setGame(data);
+                   console.log(error);
 
                 }
+
+                else{
+
+                    setGame(data);
+
+                }
+
+                setLoading(false);
     }
 
     useEffect(() => {
@@ -32,10 +43,18 @@ function GamePage(props){
         console.log(game);
     }, [game])
 
-    return(
+    if (loading){
+        return (
+            <>
+                Loading Game... 
+            </>
+        )
+    }
+
+    return(game &&
         <>
-            <button type = "button">Back</button>
-            Game Name: {props.gameName}
+            <button type = "button" onClick = {() => navigate(`/home`)}>Back</button>
+            Game Name: {gameName}
 
             {game && Object.entries(game.options).map(([optionID, option]) => (
                 <div key={optionID}>
