@@ -3,17 +3,26 @@ import supabase from './config/supabase-config';
 
 function GameList(){
     const [games, setGames] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     async function getGames(){
             const { data, error } = await supabase
                 .from("games")
-                .select("name","game_id");
+                .select("name, game_id");
 
-                if(!error){
+                if(error){
 
-                    setGames(data);
+                    console.log(error)
 
                 }
+
+                else{
+
+                    setGames(data);
+                    
+                }
+                
+                setLoading(false);
     }
 
     // Get Data
@@ -26,15 +35,18 @@ function GameList(){
 
     // Populate page with elements for each game, only show game name
     
+    if(loading){
+        return <div>Loading Games...</div>
+    }
     return(
         <>
             {games.map((game) => 
                 (
-                <>
-                    <div key = {game.name}>
-                        {game.name}
-                    </div>
-                </>
+            
+                <div key = {game.game_id}>
+                    {game.name}
+                </div>
+                
             ))}
         </>
     )

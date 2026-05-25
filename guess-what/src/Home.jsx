@@ -2,20 +2,30 @@ import { useState } from "react";
 import { useAuth } from "./AuthContext";
 import supabase from "./config/supabase-config";
 import Login from "./Login";
+import GameList from "./GameList"
+import { useNavigate } from "react-router-dom";
 
 function Home(){
 
     const { user } = useAuth();
-
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+        
     async function logout(e) {
+
+        setLoading(true);
+
         const { error } = await supabase.auth.signOut()
 
         if (error){
             console.log(error);
+            setLoading(false);
         }
 
         else{
             console.log("Log out Successful")
+            navigate("/login");
+
         }
     }
 
@@ -23,7 +33,10 @@ function Home(){
     if (user){
         return(
             <>
-                <button type = "button" onClick={logout} >Log Out</button>
+                You are logged in
+                <button type = "button" onClick={logout} >{loading ? "Logging Out..." : "Log Out"}</button>
+
+                <GameList/>
             </>
         )
     }
