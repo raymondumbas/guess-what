@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 .env.local
-../notes/InternalNotes.md
+./notes/InternalNotes.md
