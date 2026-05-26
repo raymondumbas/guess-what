@@ -40,21 +40,24 @@ function NewGameModal(){
     }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+      <button type = "button" onClick={() => {navigate(`/home`)}}>Back</button>
+      <form onSubmit={handleSubmit}>
 
-      <label>Game Name:
-      <input 
-        type="text" 
-        name="name" 
-        value={inputs.name} 
-        onChange={handleChange}
-      />
-      </label>
+        <label>Game Name:
+        <input 
+          type="text" 
+          name="name" 
+          value={inputs.name} 
+          onChange={handleChange}
+        />
+        </label>
 
-      <DynamicListField setInputs = {setInputs} />
+        <DynamicListField setInputs = {setInputs} />
 
-      <input type="submit" value="create"/>
-    </form>
+        <input type="submit" value="create"/>
+      </form>
+    </>
   )
 }
 
