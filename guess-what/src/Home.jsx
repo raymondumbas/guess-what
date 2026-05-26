@@ -35,6 +35,7 @@ function Home(){
             <>
                 You are logged in
                 <button type = "button" onClick={logout} >{loading ? "Logging Out..." : "Log Out"}</button>
+                <button type ="button" onClick={() => {navigate(`/newgame`)}}> New Game </button>
 
                 <GameList/>
             </>

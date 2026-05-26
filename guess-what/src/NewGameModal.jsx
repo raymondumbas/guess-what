@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import DynamicListField from './DynamicListField';
 import supabase from './config/supabase-config';
+import { useNavigate } from 'react-router-dom';
 
 // Form Code based on w3schools guide
 function NewGameModal(){
     const [inputs, setInputs] = useState({});
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -25,8 +27,16 @@ function NewGameModal(){
           
         ])
 
-        console.log("data", data)
-        console.log("error", error)
+        if(error){
+          console.log("error", error)
+        }
+
+        else{
+          console.log("data", data)
+          navigate(`/home`)
+        }
+        
+        
     }
 
   return (
