@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react"
 import supabase from './config/supabase-config';
 import { useNavigate } from "react-router-dom";
+import JoinGame from "./JoinGame";
 
 function GameList(){
     const [games, setGames] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+   
+    const goToGame = (game) =>{
+        navigate(`/game/${game.name}`,{
+            state:{
+                gameID: game.game_id
+            }
+        })
+    }
 
     async function getGames(){
             const { data, error } = await supabase
@@ -28,6 +37,8 @@ function GameList(){
                 console.log(games);
     }
 
+
+
     // Get Data
     useEffect( () => {
 
@@ -46,7 +57,7 @@ function GameList(){
             {games.map((game) => 
                 (
             
-                <div key = {game.game_id} onClick = {() => navigate(`/game/${game.name}`)}>
+                <div key = {game.game_id} onClick = {() => goToGame(game)}>
                     {game.name}
                 </div>
                 
