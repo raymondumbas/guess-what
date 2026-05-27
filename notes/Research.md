@@ -48,6 +48,9 @@ https://stackoverflow.com/questions/68731583/how-can-i-remove-a-property-from-st
 Router to manage multi-view
 https://www.w3schools.com/react/react_router.asp
 
+Router States to Pass Data
+https://dev.to/thatfemicode/passing-data-states-through-react-router-8dh
+
 # Functions Review
 map()
 https://www.w3schools.com/react/react_es6_array_map.asp
