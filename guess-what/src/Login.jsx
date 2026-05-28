@@ -7,7 +7,8 @@ function Login(props){
 
     const [inputs, setInputs] = useState({
         username:"",
-        password:""
+        password:"",
+        display_name:"",
     });
 
     // "Sign In" or "Sign Up"
@@ -47,7 +48,12 @@ function Login(props){
 
             const { data, error } = await supabase.auth.signUp({
                 email: inputs.username + "@fakeemail.com",
-                password: inputs.password
+                password: inputs.password,
+                options:{
+                    data:{
+                        display_name: inputs.display_name,
+                    },
+                },
             });
 
             if (error) {
@@ -92,6 +98,18 @@ function Login(props){
             />
             </label>
 
+            {action == "Sign Up" ? 
+                <label>Display Name:
+                <input 
+                    type="text" 
+                    name="display_name" 
+                    value={inputs.display_name} 
+                    onChange={handleChange}
+                />
+                </label>
+                : <></>
+            }
+            
             <input type="submit" value={action}/>
             </form>
 
