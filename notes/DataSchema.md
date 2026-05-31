@@ -9,6 +9,7 @@ All created games
 | game_id | UUID | |
 | name | TEXT||
 | options| JSONB ||
+| current_round | INT | |
 
 
 ## player_records

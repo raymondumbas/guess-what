@@ -22,7 +22,8 @@ function NewGameModal(){
             ID: crypto.randomUUID(),
             game_id: crypto.randomUUID(),
             name: inputs.name,
-            options: inputs.options
+            options: inputs.options,
+            current_round: 0
           }
           
         ])
