@@ -48,7 +48,7 @@ export async function getData(from, select, eq) {
  */
 export async function insertData(from,dataObject){
 
-            const { data, error } = await supabase.from(from).insert(dataObject)
+        const { data, error } = await supabase.from(from).insert(dataObject)
 
         if(error){
 
@@ -59,6 +59,36 @@ export async function insertData(from,dataObject){
         else{
 
           console.log(`Inserted data to ${from}`,data);
+
+        }
+
+}
+
+/**
+ * Wrapper for updating data in supabase
+ *
+ * @function updateData
+ * @param {string} from - DB Table name
+ * @param {object} dataObject - Key = table fields, Value = field values
+ * @param {object} eq - "field" = table field name, "value" = target value
+ * @returns {Promise<object>} Resolves to the updated DB data
+ * @throws {Error} Throws an error if supabase fetch fails
+ * 
+ */
+export async function updateData(from, dataObject, eq){
+
+    
+        const { data, error } = await supabase.from(from).update(dataObject).eq(eq.field,eq.value)
+
+        if(error){
+
+          throw error;
+
+        }
+
+        else{
+
+          console.log(`Updated data in ${from}`,data);
 
         }
 
