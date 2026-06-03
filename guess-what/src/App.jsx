@@ -5,6 +5,8 @@ import GameList from './GameList';
 import Home from './Home';
 import Login from './Login';
 import GamePage from './GamePage';
+import NewRoundButton from './NewRoundButton';
+import RoundList from './RoundList';
 import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 function App() {
