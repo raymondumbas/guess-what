@@ -3,6 +3,8 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import supabase from './config/supabase-config';
 import JoinGame from './JoinGame';
 import { useAuth } from './AuthContext';
+import NewRoundButton from './NewRoundButton';
+import RoundList from './RoundList';
 
 /*
     State:
@@ -101,7 +103,8 @@ function GamePage(){
             Game Name: {gameName}
 
             <JoinGame userInGame = {userInGame} setUserInGame = {setUserInGame} gameID = {gameID} />
-            <NewRound gameID = {gameID}/>
+            <NewRoundButton gameID = {gameID}/>
+            <RoundList gameID = {gameID} />
             {game && Object.entries(game.options).map(([optionID, option]) => (
                 <div key={optionID}>
                     {option}
