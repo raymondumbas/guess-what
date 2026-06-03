@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import supabase from './config/supabase-config';
 import JoinGame from './JoinGame';
-import NewRound from './NewRound';
 import { useAuth } from './AuthContext';
 
 /*
