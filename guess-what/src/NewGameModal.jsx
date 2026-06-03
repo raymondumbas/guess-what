@@ -19,7 +19,7 @@ function NewGameModal(){
 
         const { data, error } = await supabase.from('games').insert([
           {
-            ID: crypto.randomUUID(),
+            id: crypto.randomUUID(),
             game_id: crypto.randomUUID(),
             name: inputs.name,
             options: inputs.options,

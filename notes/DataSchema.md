@@ -5,7 +5,7 @@ All created games
 
 | Column Name | Value | Notes|
 |:----: |:----:|:-----:|
-| ID | UUID | Primary Key (universal) |
+| id | UUID | Primary Key (universal) |
 | game_id | UUID | |
 | name | TEXT||
 | options| JSONB ||
@@ -15,7 +15,7 @@ All created games
 ## player_records
 | Column Name | Value | Notes|
 |:----: |:----:|:-----:|
-| ID | UUID | Primary Key (universal) |
+| id | UUID | Primary Key (universal) |
 | user_id | UUID| |
 | name | TEXT| |
 | game_id | UUID| |
@@ -25,7 +25,7 @@ All created games
 ## rounds
 | Column Name | Value | Notes|
 |:----: |:----:|:-----:|
-| ID | UUID | Primary Key (universal) |
+| id | UUID | Primary Key (universal) |
 | game_id | UUID | |
 | round_num | UUID||
 | correct_option | TEXT ||
@@ -34,7 +34,7 @@ All created games
 ## predictions
 | Column Name | Value | Notes|
 |:----: |:----:|:-----:|
-| ID | UUID | Primary Key (universal) |
+| id | UUID | Primary Key (universal) |
 | game_id | UUID | |
 | user_id | UUID | |
 | round_num| UUID | |
