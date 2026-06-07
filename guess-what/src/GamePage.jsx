@@ -53,26 +53,36 @@ function GamePage(){
     //Get User function
     async function getPlayerRecords(){
 
+        // Get all player records for this game
         const { data, error } = await supabase
                 .from("player_records")
                 .select("name, score")
-                .eq("user_id", user.id)
                 .eq("game_id", gameID)
 
         if(error){
             console.log(error);
         }
+
+        // Get successful
         else{
+
+            // If empty, then user is not in this game
             if(data.length === 0){
 
                 console.log(`No player records found for ${gameName}`)
 
             }
 
+            // Player records exist
             else{
 
-                setUserInGame(true);
+                // Check if current user is in game
+                if(data.some(player => player.id === user.id)){
+                    setUserInGame(true);
+                }
 
+                setPlayerRecords(data);
+                
             }
         }
 
@@ -97,7 +107,7 @@ function GamePage(){
         )
     }
 
-    return(game &&
+    return(game && playerRecords &&
         <>
             <button type = "button" onClick = {() => navigate(`/home`)}>Back</button>
             Game Name: {gameName}
@@ -105,11 +115,23 @@ function GamePage(){
             <JoinGame userInGame = {userInGame} setUserInGame = {setUserInGame} gameID = {gameID} />
             <NewRoundButton gameID = {gameID}/>
             <RoundList gameID = {gameID} />
-            {game && Object.entries(game.options).map(([optionID, option]) => (
-                <div key={optionID}>
-                    {option}
-                </div>
-            ))}
+
+            {
+                playerRecords.map(player =>{
+                    <div key = {player.id}>
+                        {player}
+                    </div>
+
+                })
+            }
+
+            {
+                Object.entries(game.options).map(([optionID, option]) => (
+                    <div key={optionID}>
+                        {option}
+                    </div>
+                ))
+            }
         </>
     )
 }
