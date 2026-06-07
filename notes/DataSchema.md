@@ -39,3 +39,10 @@ All created games
 | user_id | UUID | |
 | round_num| UUID | |
 | pred_option_| TEXT| |
+
+## display_names
+| Column Name | Value | Notes |
+|:----: |:----:|:-----:|
+| id | UUID | Primary Key (universal) |
+| display_name | UUID | |
+| user_id | UUID | |
